@@ -29,6 +29,7 @@ instance/
 .venv/
 # Log files
 *.log
+__init__.py
 
 # Compiled files
 *.pyc
