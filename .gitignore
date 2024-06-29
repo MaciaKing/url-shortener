@@ -1,0 +1,104 @@
+# Python
+*.py[cod]
+*$.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+*.log
+*.pot
+*.pid
+*.gz
+*.cover
+*.DS_Store
+*.mo
+*.PYC
+*.pyo
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+local_settings.py
+instance/
+.venv/
+# Log files
+*.log
+
+# Compiled files
+*.pyc
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+instance/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear during a merge
+._*
+
+# Other
+.Spotlight-V100
+.Trashes
+
+# Ignore folders with the virtual environment name "venv"
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media
+
+# Static files
+staticfiles/
+
+# Ignore the folders for your IDE
+.vscode/
+.idea/
+.pycharm/
+
