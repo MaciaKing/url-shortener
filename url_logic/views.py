@@ -3,20 +3,26 @@ from django.http import HttpResponse
 from django.template import loader
 from django.views.decorators.csrf import csrf_protect
 from .forms import UrlForm
+from .models import CustomUrl
 import ipdb
 
 # Create your views here.
 def index(request):
     if request.method == 'POST':
-        ipdb.set_trace()
         if request.POST['shortcut_option'] == 'auto':
             # Generate automatic url
-            None
+            cm = CustomUrl(
+                custom_url = CustomUrl().generate_random_custom_url(),
+                url = request.POST['url']
+            )
+            cm.save()
         else:
             # get shortcut url
-            None
-        # request.POST #accedemos a los parametros de nuestro form
-        return HttpResponse('HOLA')
-    else:
-        form = UrlForm
-        return render(request, 'index.html', {'form': form})
+            cm = CustomUrl(
+                custom_url = request.POST['shortcut_url'],
+                url = request.POST['url']
+            )
+            cm.save()
+    
+    form = UrlForm
+    return render(request, 'index.html', {'form': form})
