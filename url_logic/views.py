@@ -11,18 +11,14 @@ def index(request):
     if request.method == 'POST':
         if request.POST['shortcut_option'] == 'auto':
             # Generate automatic url
-            cm = CustomUrl(
-                custom_url = CustomUrl().generate_random_custom_url(),
-                url = request.POST['url']
-            )
-            cm.save()
+            custom_url = CustomUrl().generate_random_custom_url()
         else:
             # get shortcut url
-            cm = CustomUrl(
-                custom_url = request.POST['shortcut_url'],
-                url = request.POST['url']
-            )
-            cm.save()
-    
+            custom_url = request.POST['shortcut_url']
+        cm = CustomUrl(
+            custom_url = custom_url,
+            url = request.POST['url']
+        )
+        cm.save()
     form = UrlForm
     return render(request, 'index.html', {'form': form})
