@@ -24,4 +24,31 @@ window.onload = function() {
 
     id_shortcut_option_0_button.addEventListener("change", detectRadioButtonSelected);
     id_shortcut_option_1_button.addEventListener("change", detectRadioButtonSelected);
+    createDataTable();
+}
+
+
+function createDataTable(){
+    const data = [
+        {
+            'url': 'https://chatgpt.com/c/60893c8e-53c6-40c5-94cd-76bbc2f0d2cc',
+            'custom_url': 'pyrz'
+        },
+        {
+            'url': 'https://chatgpt.com/c/60893c8e-53c6-40c5-94cd-76bbc2f0d2cc',
+            'custom_url': 'uoud'
+        },
+        {
+            'url': 'https://chatgpt.com/c/60893c8e-53c6-40c5-94cd-76bbc2f0d2cc',
+            'custom_url': 'bhbr'
+        }
+    ];
+    // Initialize DataTable
+    $('#example').DataTable({
+        data: data,
+        columns: [
+            { data: 'url' },
+            { data: 'custom_url' }
+        ]
+    });
 }
