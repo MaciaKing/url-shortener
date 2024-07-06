@@ -42,26 +42,22 @@
           <form method="post" action="{% url 'index' %}" class="inline-form">
             {% csrf_token %}
             <div class="form-group">
-              <div class="form-check form-check-inline">
-                <label class="form-check-label">Enter your URL:</label>
+              <div class="form-group">
                 {{form.url}}
               </div>
             </div>
             <div class="form-group">
               {% for choice in form.shortcut_option %}
-                <div class="form-check form-check-inline">
-                  {{ choice.tag }}
-                  {{ choice.choice_label }}
-                </div>
+              <div class="form-check form-check-inline">
+                {{choice.tag}}
+                {{choice.choice_label}}
+              </div>
               {% endfor %}
             </div>
-            <div class="form-check form-check-inline" id='insert_shortcut' style="display: none;">
-                <label class="form-check-label">Shortcut:</label>
-                {{form.shortcut_url}}
+            <div class="form-group" id='insert_shortcut' style="display: none;">
+              {{form.shortcut_url}}
             </div>
-          
-            <button type="submit" class="btn btn-lg btn-secondary">Submit</button>
-              
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>    
           </form>
         </p>
       </main>
@@ -69,16 +65,16 @@
       <table id="table" class="table table-striped" style="width:100%">
         <thead>
           <tr>
-            <th>Url</th>
-            <th>Custom Url</th>
+            <th>Custom URL</th>
+            <th>URL</th>
           </tr>
         </thead>
         <tbody>
         </tbody>
         <tfoot>
           <tr>
-            <th>Url</th>
-            <th>Custom Url</th>
+            <th>Custom URL</th>
+            <th>URL</th>
           </tr> 
         </tfoot>
       </table>
