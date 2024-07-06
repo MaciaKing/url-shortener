@@ -1,10 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
-from django.views.decorators.csrf import csrf_protect
 from .forms import UrlForm
 from .models import CustomUrl
-import ipdb
+from django.http import JsonResponse
+
 
 # Create your views here.
 def index(request):
@@ -20,5 +18,11 @@ def index(request):
             url = request.POST['url']
         )
         cm.save()
+    
+    custom_urls = CustomUrl.objects.all()
     form = UrlForm
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'index.html', {'form': form, 'custom_urls': custom_urls,})
+
+def get_all_custom_urls(request):
+    custom_urls = list(CustomUrl.objects.values())
+    return JsonResponse(custom_urls, safe=False)
