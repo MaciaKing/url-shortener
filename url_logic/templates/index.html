@@ -18,6 +18,7 @@
     <link href="{% static 'css/cover.css' %}" rel="stylesheet">
     <!-- Datatables core CSS -->
     <link href="{% static 'css/dataTables.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
   </head>
 
   <body class="text-center">
@@ -79,6 +80,23 @@
         </tfoot>
       </table>
 
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-plain" id="exampleModalLabel">Exception</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+             </button>
+            </div>
+            <div class="modal-body text-plain">
+             Custom URL already exists
+           </div>
+          </div>
+        </div>
+      </div>
+
       <footer class="mastfoot mt-auto">
         <div class="inner">
           <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
@@ -92,10 +110,17 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
     <script src="{% static 'js/index.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
     <script src="{% static 'js/dataTables.min.js' %}"></script>
+    <script>
+      // Utilizamos el filtro `yesno` para convertir el booleano en una cadena 'true' o 'false'
+      var exception = {{ exception|yesno:"true,false" }};
+      // Llamando a la función con el valor booleano
+      viewException(exception);
+    </script>
+    </script>
   </body>
 </html>

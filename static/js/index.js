@@ -42,6 +42,16 @@ function createTable(data) {
     });
 }
 
+function viewException(exeption){
+    if (exeption){
+        $(document).ready(function() {
+            $('#exampleModal').modal('show');
+          });
+    } else { 
+        $('#exampleModal').modal('hide');
+    }
+}
+
 window.onload = function() {
     var id_shortcut_option_0_button = document.getElementById("id_shortcut_option_0");
     var id_shortcut_option_1_button = document.getElementById("id_shortcut_option_1");
