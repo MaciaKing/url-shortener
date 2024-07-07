@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('custom_urls', views.get_all_custom_urls, name='custom_urls')
+    path('custom_urls', views.get_all_custom_urls, name='custom_urls'),
+    path('redirect', views.redirect, name='redirect')
 ]

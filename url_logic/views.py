@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .forms import UrlForm
 from .models import CustomUrl
 from django.http import JsonResponse
+# from django.shortcuts import redirect
+from django.shortcuts import redirect as django_redirect
+
 import ipdb
 
 # Create your views here.
@@ -30,5 +33,6 @@ def get_all_custom_urls(request):
     return JsonResponse(custom_urls, safe=False)
 
 def redirect(request):
-    ipdb.set_trace()
-    None
+    if request.method == 'GET':
+        if CustomUrl.objects.filter(custom_url=request.GET['custom_url']).exists():
+            return django_redirect(CustomUrl.objects.get(custom_url=request.GET['custom_url']).url)
