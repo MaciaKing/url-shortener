@@ -24,4 +24,7 @@ class CustomUrl(models.Model):
     @staticmethod
     def generate_random_custom_url():
         letters = string.ascii_lowercase  # 'abcdefghijklmnopqrstuvwxyz'
-        return''.join(random.choice(letters) for _ in range(4))  # Genera una cadena aleatoria de 4 letras minúsculas
+        while True:
+            random_custom_url = ''.join(random.choice(letters) for _ in range(4))
+            if not CustomUrl.objects.filter(custom_url=random_custom_url).exists():
+                return random_custom_url
