@@ -33,11 +33,6 @@ def get_all_custom_urls(request):
     custom_urls = list(CustomUrl.objects.values())
     return JsonResponse(custom_urls, safe=False)
 
-def redirect(request):
-    if request.method == 'GET':
-        if CustomUrl.objects.filter(custom_url=request.GET['custom_url']).exists():
-            return django_redirect(CustomUrl.objects.get(custom_url=request.GET['custom_url']).url)
-
 @csrf_exempt
 def drop_custom_url(request):
     if request.method == 'POST':
