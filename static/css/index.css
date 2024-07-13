@@ -6,3 +6,10 @@
     font-weight: normal; /* Opcional, para asegurarse de que no haya negrita */
     background: none; /* Si el fondo del texto tiene algún estilo */
 }
+
+.delete-button {
+    padding: 0; /* Elimina cualquier relleno para que el botón se ajuste al contenido */
+    height: auto; /* Ajusta la altura automáticamente */
+    background-color: transparent; /* Asegura que el fondo del botón sea transparente */
+    border: none; /* Elimina el borde del botón */
+}
