@@ -13,3 +13,10 @@
     background-color: transparent; /* Asegura que el fondo del botón sea transparente */
     border: none; /* Elimina el borde del botón */
 }
+
+.arrow-button {
+    padding: 0; /* Elimina cualquier relleno para que el botón se ajuste al contenido */
+    height: auto; /* Ajusta la altura automáticamente */
+    background-color: transparent; /* Asegura que el fondo del botón sea transparente */
+    border: none; /* Elimina el borde del botón */
+}
