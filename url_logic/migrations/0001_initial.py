@@ -15,7 +15,15 @@ class Migration(migrations.Migration):
             name='CustomUrl',
             fields=[
                 ('url', models.CharField(max_length=100)),
-                ('custom_url', models.URLField(blank=True, default='', primary_key=True, serialize=False)),
+                (
+                    'custom_url',
+                    models.URLField(
+                        blank=True,
+                        default='',
+                        primary_key=True,
+                        serialize=False
+                    )
+                ),
             ],
         ),
     ]
