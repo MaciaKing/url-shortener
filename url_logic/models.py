@@ -8,18 +8,7 @@ class CustomUrl(models.Model):
     custom_url = models.URLField(default='', blank=True, primary_key=True)
 
     def __str__(self):
-        return self.url
-    
-    @staticmethod
-    def save_url(custom_url, url):
-        if CustomUrl.objects.filter(custom_url=custom_url).exists():
-            raise Exception("Custom url already exist")
-        else:
-            cm = CustomUrl(
-                custom_url = custom_url,
-                url = url
-            )
-            cm.save()
+        return self.url  
 
     @staticmethod
     def generate_random_custom_url():
