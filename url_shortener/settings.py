@@ -27,9 +27,6 @@ SECRET_KEY = 'django-insecure-42(c89)^2s0@3irw9=%*s(#2#=baf4j0dyq@fzi^rbkakk=ih9
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '0.0.0.0']
-#CSRF_TRUSTED_ORIGINS = ['localhost']
-
-#CSRF_COOKIE_HTTPONLY = True  # Hace que el token CSRF solo sea accesible a través de HTTP
 
 # Application definition
 
@@ -83,8 +80,8 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_DB'),
         'USER': os.environ.get('PGUSER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('HOST_DATABASE'), 
-        'PORT': os.environ.get('DB_PORT'),                
+        'HOST': os.environ.get('HOST_DATABASE'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
